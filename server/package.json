@@ -1,0 +1,20 @@
+{
+  "name": "hackathon-2017-server",
+  "version": "0.1.0",
+  "description": "Server APIs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./",
+    "dev": "node-dev ./",
+    "debug": "node-debug ./"
+  },
+  "author": "Noam Shay",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pg": "^6.1.5"
+  },
+  "devDependencies": {
+    "supervisor": "~0.12.0"
+  }
+}
