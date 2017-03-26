@@ -11,7 +11,9 @@
   "author": "Noam Shay",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "node-gcm": "^0.14.4",
     "pg": "^6.1.5"
   },
   "devDependencies": {
