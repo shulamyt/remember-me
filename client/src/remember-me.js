@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as RestService from './utilities/rest-utilities';
+import SelectChildrenPage from './pages/selectChildrenPage';
+
+const SELECTED_CHILDREN_PAGE = "selectChildrenPage";
 
 var render = function(){
+	var selectedPage = SELECTED_CHILDREN_PAGE;
+	var Page;
+	switch(selectedPage) {
+		case SELECTED_CHILDREN_PAGE:
+			renderSelectChildrenPage();
+			break;
+		default:
+			console.log("Opps..");
+	}
+}
+
+var renderSelectChildrenPage = function(){
 	ReactDOM.render(
-		<div>Hi</div>
+		<SelectChildrenPage/>
 		,document.getElementById('main')
 	);
 }
+
 
 // RestService.get('/teacher').then(function(allTeacher) {
 // 	console.log('get: teacher');
