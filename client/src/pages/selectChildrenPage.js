@@ -10,8 +10,16 @@ class SelectChildrenPage extends React.Component{
 	}
 
 	render(){
+		console.log(this.props.children);
+		let children = this.props.children.map((child)=>{
+			return (
+				<div key={child.name}>{child.name}</div>
+			);
+		});
 		return (
-			<div>you are in select children page</div>
+			<div>
+				{children}
+			</div>
 		);
 	}
 }
