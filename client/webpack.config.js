@@ -1,5 +1,6 @@
 var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var mockProvider = require('./mockdata/mockProvider.js');
 
 module.exports = {
 	entry: './src/remember-me.js',
@@ -29,6 +30,7 @@ module.exports = {
 
 	devServer: {
 		contentBase: path.resolve(__dirname, './src'),
+		proxy: mockProvider
 	},
 
 	devtool: 'source-map'
