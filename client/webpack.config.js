@@ -25,5 +25,11 @@ module.exports = {
 				force: true
 			}
 		])
-	]
+	],
+
+	devServer: {
+		contentBase: path.resolve(__dirname, './src'),
+	},
+
+	devtool: 'source-map'
 };
