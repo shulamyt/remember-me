@@ -15,7 +15,7 @@ class NotificationService {
       return clientStorage.get();
   }
 
-  registerClient(clientId, token) {
+  registerClient({clientId, token}) {
       clientStorage.add({clientId, token})
   }
 

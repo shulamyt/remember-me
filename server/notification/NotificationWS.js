@@ -4,7 +4,9 @@ class NotificationWS {
     constructor(router) {
         this.router = express.Router()
         .get('/notification/client', this.getClients.bind(this))
+        .post('/notification/client', this.send.bind(this))
         .post('/notification', this.send.bind(this));
+
     }
 
     getClients(req, res, next) {
@@ -17,6 +19,14 @@ class NotificationWS {
             clientId: req.body.clientId,
             title: req.body.title,
             body:  req.body.body
+        }).then((msg) => res.json(msg))
+        .catch(next);
+    }
+
+    registerClient(req, res, next) {
+        service.registerClient({
+            clientId: req.body.clientId,
+            token: req.body.token
         }).then((msg) => res.json(msg))
         .catch(next);
     }
