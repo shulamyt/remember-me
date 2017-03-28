@@ -7,7 +7,7 @@ class LoginPage extends React.Component{
 	
 	onLogin(){
 		let user = {
-			username: "shula",
+			name: "shula",
 			password: "1234"
 		};
 		let self = this;
