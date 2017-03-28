@@ -4,7 +4,7 @@ class NotificationWS {
     constructor(router) {
         this.router = express.Router()
         .get('/notification/client', this.getClients.bind(this))
-        .post('/notification', this.add.bind(this));
+        .post('/notification', this.send.bind(this));
     }
 
     getClients(req, res, next) {
