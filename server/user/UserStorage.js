@@ -5,6 +5,11 @@ class UserStorage {
                     .then((result) => (result.rows));
     }
 
+    getByUserName(userName){
+        return StorageUtils.query('SELECT * FROM  users where name=$1',[userName])
+                    .then((result) => (result.rows[0]));
+    }
+
     add(user) {
         return StorageUtils.query('insert into users (name, pass) values ($1, $2) returning *',
                                     [user.name, user.pass])
