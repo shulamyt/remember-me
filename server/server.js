@@ -9,6 +9,7 @@ const userWS = new UserWS();
 const messageWS = new MessageWS();
 const notificationWS = new NotificationWS();
 
+app.use(express.static('./../client/dist'));
 app.use(bodyParser.json());
 
 app.use(userWS.getRouter());
