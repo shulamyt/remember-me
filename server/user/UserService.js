@@ -11,7 +11,7 @@ class UserService {
     login(user) {
         return new Promise((resolve, reject)=>{
             Storage.getByUserName(user.name).then((fetchedUser)=>{
-                if(fetchedUser.pass == user.pass){
+                if(fetchedUser.password == user.password){
                     resolve(fetchedUser);
                 }
                 else{
@@ -19,7 +19,7 @@ class UserService {
                 }
             });
         });
-        
+
     }
 }
 module.exports = new UserService();

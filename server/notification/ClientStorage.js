@@ -5,7 +5,7 @@ class ClientStorage {
                     .then((result) => (result.rows));
     }
 
-    get(id) {
+    getById(id) {
         return StorageUtils.query('select * from notification_clients where client_id = $1', [id])
                     .then((result) => (result.rows[0]));
     }
