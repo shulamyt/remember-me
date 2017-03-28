@@ -1,8 +1,12 @@
-.student{
-	width: 150px;
-	height: 100px;
-	background: red;
-	float: left;
-	margin-right: 5px;
-	margin-bottom: 5px;
+.students-list-page{
+	.student{
+		width: 150px;
+		height: 100px;
+		background: blue;
+		float: left;
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
 }
+
+

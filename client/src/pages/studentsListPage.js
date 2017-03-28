@@ -21,7 +21,7 @@ class StudentsListPage extends React.Component{
 		}
 		
 		return (
-			<div>
+			<div className="students-list-page">
 				{students}
 			</div>
 		);
