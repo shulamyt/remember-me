@@ -1,6 +1,7 @@
 var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var mockProvider = require('./mockdata/mockProvider.js');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: './src/remember-me.js',
@@ -15,6 +16,16 @@ module.exports = {
 				test: /\.(js)$/,
 				use: 'babel-loader',
 				exclude: /node_modules/
+			},
+
+			{
+			test: /\.(css|scss)$/,
+			use:
+				[
+					'style-loader',
+					'css-loader',
+					'sass-loader'
+				],
 			},
 		]
 	},

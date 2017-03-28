@@ -1,4 +1,5 @@
 import React from 'react';
+import './select-children-page.scss';
 
 class SelectChildrenPage extends React.Component{
 
@@ -13,7 +14,7 @@ class SelectChildrenPage extends React.Component{
 		console.log(this.props.children);
 		let children = this.props.children.map((child)=>{
 			return (
-				<div key={child.name}>{child.name}</div>
+				<div className="child" key={child.name}>{child.name}</div>
 			);
 		});
 		return (
