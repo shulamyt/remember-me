@@ -1,8 +1,7 @@
 
-var firebaseAdmin = require("firebase-admin");
-var firebaseAccount = require("./firebase/remember-me-14b4b-firebase-adminsdk-1bm34-0f8eaf572e.json");
-
-
+const firebaseAdmin = require("firebase-admin");
+const firebaseAccount = require("./firebase/remember-me-14b4b-firebase-adminsdk-1bm34-0f8eaf572e.json");
+const clientStorage = require("./ClientStorage");
 
 class NotificationService {
   constructor() {
@@ -12,8 +11,12 @@ class NotificationService {
     });
   }
 
-  registerClient(clientId, registrationId) {
+  getClients() {
+      return clientStorage.get();
+  }
 
+  registerClient(clientId, token) {
+      clientStorage.add({clientId, token})
   }
 
   async send({clientId, title, body}) {
@@ -21,9 +24,15 @@ class NotificationService {
       notification: {title, body}
     };
 
+    const client = clientStorage.get(clientId);
+
+    if(!client) {
+        throw new Error('client ${clientId} not registered!');
+    }
+
     // Send a message to the device corresponding to the provided
     // registration token.
-    firebaseAdmin.messaging().sendToDevice(registrationToken, payload)
+    firebaseAdmin.messaging().sendToDevice(client.token, payload)
     .then(function(response) {
       console.log("Successfully sent message:", response);
       return response;
