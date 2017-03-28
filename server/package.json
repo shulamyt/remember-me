@@ -2,11 +2,11 @@
   "name": "hackathon-2017-server",
   "version": "0.1.0",
   "description": "Server APIs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "pm2 start ./index.js",
-    "stop": "pm2 stop ./index.js",
-    "local": "node ./",
+    "start": "pm2 start ./server.js",
+    "stop": "pm2 stop ./server.js",
+    "local": "node ./server.js",
     "dev": "node-dev ./",
     "debug": "node-debug ./"
   },

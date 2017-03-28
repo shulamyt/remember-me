@@ -1,5 +1,5 @@
-const StorageUtils = require('./utils');
-class UsersStorage {
+const StorageUtils = require('./../utils/storage/StorageUtils');
+class UserStorage {
     get() {
         return StorageUtils.query('select * from users')
                     .then((result) => (result.rows));
@@ -12,4 +12,4 @@ class UsersStorage {
     }
 }
 
-module.exports = new UsersStorage();
+module.exports = new UserStorage();

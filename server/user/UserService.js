@@ -1,4 +1,4 @@
-const Storage = require('./storage/storage');
+const Storage = require('./UserStorage');
 class UserService {
     get() {
         return Storage.get();

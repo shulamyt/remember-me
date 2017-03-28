@@ -1,6 +1,6 @@
 const express = require('express');
-const service = require('./service');
-class UsersWS xfsfsdfdf FAIL JENKINS TEST {
+const service = require('./UserService');
+class UserWS {
   constructor(router) {
     this.router = express.Router()
                     .get('/users', this.get.bind(this))
@@ -25,4 +25,4 @@ class UsersWS xfsfsdfdf FAIL JENKINS TEST {
   }
 
 }
-module.exports = UsersWS;
+module.exports = UserWS;
