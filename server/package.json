@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2 start ./index.js",
+    "stop": "pm2 stop ./index.js",
     "local": "node ./",
     "dev": "node-dev ./",
     "debug": "node-debug ./"
