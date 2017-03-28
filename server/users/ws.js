@@ -1,6 +1,6 @@
 const express = require('express');
 const service = require('./service');
-class UsersWS {
+class UsersWS xfsfsdfdf FAIL JENKINS TEST {
   constructor(router) {
     this.router = express.Router()
                     .get('/users', this.get.bind(this))
