@@ -12,8 +12,6 @@ class LoginPage extends React.Component{
 		};
 		let self = this;
 		RestService.put('/user/login', user).then(function(user) {
-			console.log('put: user = ');
-			console.log(user);
 			self.props.onLoginSuccess(user);
 		});
 	}

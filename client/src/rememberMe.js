@@ -1,9 +1,9 @@
 import React from 'react';
-import SelectChildrenPage from './pages/selectChildrenPage';
+import StudentsListPage from './pages/studentsListPage';
 import LoginPage from './pages/loginPage';
 import * as RestService from './utilities/rest-utilities';
 
-const SELECTED_CHILDREN_PAGE = "selectChildrenPage";
+const STUDENTS_LIST_PAGE = "studentsListPage";
 const LOGIN_PAGE = "loginPage";
 
 class RememberMe extends React.Component{
@@ -12,29 +12,29 @@ class RememberMe extends React.Component{
 		super(props)
 		this.state = {
 			currentPage: LOGIN_PAGE,
-			children: [],
+			students: [],
 			currentUser: {}
 		}
 	}
 
-	fetchChildrenByTeacherID(){
-		let teacherID = 111;
+	fetchStudentsByMentorId(){
+		let mentorId = 111;
 		let self = this;
-		RestService.get('/child?teacherID=' + teacherID).then(function(children) {
-			console.log('get: children by teacherID = ' + teacherID);
-			console.log(children);
-			self.setState({children});
+		RestService.get('/student?mentorId=' + mentorId).then(function(students) {
+			console.log('get: student by mentorId = ' + mentorId);
+			console.log(students);
+			self.setState({students});
 		});
 	}
 
 	onLoginSuccess(user){
-		this.fetchChildrenByTeacherID();
-		this.setState({currentUser: user, currentPage: SELECTED_CHILDREN_PAGE});
+		this.fetchStudentsByMentorId();
+		this.setState({currentUser: user, currentPage: STUDENTS_LIST_PAGE});
 	}
 
-	renderSelectChildrenPage(){
+	renderStudentsListPage(){
 		return(
-			<SelectChildrenPage children={this.state.children}/>
+			<StudentsListPage students={this.state.students}/>
 		);
 	}
 
@@ -46,8 +46,8 @@ class RememberMe extends React.Component{
 
 	render(){
 		switch(this.state.currentPage) {
-			case SELECTED_CHILDREN_PAGE:
-				return this.renderSelectChildrenPage();
+			case STUDENTS_LIST_PAGE:
+				return this.renderStudentsListPage();
 				break;
 			case LOGIN_PAGE:
 				return this.renderLoginPage();
