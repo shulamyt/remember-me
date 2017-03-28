@@ -2,8 +2,7 @@ const StorageUtils = require('./../utils/storage/StorageUtils');
 class MessageStorage {
 
     getByUser(id) {
-      console.console.log("get message by user id=" + id);
-        return StorageUtils.query('select message from messages where userid=' + id)
+        return StorageUtils.query('select message from messages where userid=$1', [new Number(id)])
                     .then((result) => (result.rows));
     }
 
@@ -13,16 +12,16 @@ class MessageStorage {
                             .then((result) => (result.rows[0]));
     }
 
-    update({id, message}) {
+    update({messageid, message}) {
         return StorageUtils.query('update messages set message=($1) where id=($2)',
-                                    [message, id])
-                            .then((result) => (result.rows[0]));
+                                    [message, messageid])
+                            .then((result) => (result));
     }
 
-    delete(id) {
+    delete(messageid) {
         return StorageUtils.query('delete from messages where id=($1)',
-                                    [id])
-                            .then((result) => (result.rows[0]));
+                                    [messageid])
+                            .then((result) => (result));
     }
 }
 
