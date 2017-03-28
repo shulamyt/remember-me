@@ -8,8 +8,8 @@ class MessageService {
         return Storage.add({userid, message});
     }
 
-    update({id, message}) {
-        return Storage.update({id, message});
+    update({messageid, message}) {
+        return Storage.update({messageid, message});
     }
 
     delete(id) {

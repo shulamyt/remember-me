@@ -3,8 +3,8 @@ const service = require('./UserService');
 class UserWS {
   constructor(router) {
     this.router = express.Router()
-                    .get('/users', this.get.bind(this))
-                    .post('/users', this.add.bind(this))
+                    .get('/user', this.get.bind(this))
+                    .post('/user', this.add.bind(this))
                     .put('/user/login', this.login.bind(this));
   }
 
