@@ -7,11 +7,11 @@ class LoginPage extends React.Component{
 	
 	onLogin(){
 		let user = {
-			username: "Shula",
+			username: "shula",
 			password: "1234"
 		};
 		let self = this;
-		RestService.put('/user', user).then(function(user) {
+		RestService.put('/user/login', user).then(function(user) {
 			console.log('put: user = ');
 			console.log(user);
 			self.props.onLoginSuccess(user);
