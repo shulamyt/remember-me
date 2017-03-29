@@ -48,3 +48,64 @@ StorageUtils.query(
       'insert into notification_clients (client_id, token) values ($1, \'d_AO6BT-ZrM:APA91bHhMDgsI1zWeBCU8RdbE0JvxF-KqEwHg8_8vYROOy5zHjqjPzQ1d-hKMj4o61SJlUAOTrya0oCfbbP_rWL_pZrsaf_P3nO9Xzlh3yLsMOM577WwST6tYCBLwRnlHUmxALm4SJ-j\');',[user.id]
     );
 });
+
+StorageUtils.query(
+  'insert into messages (userid, message) values (1, \'' +
+  '{ ' +
+    '"detials" :{' +
+      '"title" : "hi man",' +
+      '"body" : "whats up?"' +
+    '},'+
+    '"schedule": {'+
+      '"date" :  "1490789857517"'+
+    '}'+
+   '}\');'
+);
+StorageUtils.query(
+  'insert into messages (userid, message) values (1, \'' +
+  '{ ' +
+    '"detials" :{' +
+      '"title" : "hi dude",' +
+      '"body" : "how are you?"' +
+    '},'+
+    '"schedule": {'+
+      '"date" :  "1490789857517"'+
+    '}'+
+   '}\');'
+);
+StorageUtils.query(
+  'insert into messages (userid, message) values (2, \'' +
+  '{ ' +
+    '"detials" :{' +
+      '"title" : "bro",' +
+      '"body" : "sup the whack playstation whack?"' +
+    '},'+
+    '"schedule": {'+
+      '"date" :  "1490789857517"'+
+    '}'+
+   '}\');'
+);
+StorageUtils.query(
+  'insert into messages (userid, message) values (2, \'' +
+  '{ ' +
+    '"detials" :{' +
+      '"title" : "hi man",' +
+      '"body" : "whats up?"' +
+    '},'+
+    '"schedule": {'+
+      '"date" :  "1490789857517"'+
+    '}'+
+   '}\');'
+);
+StorageUtils.query(
+  'insert into messages (userid, message) values (3, \'' +
+  '{ ' +
+    '"detials" :{' +
+      '"title" : "hi man",' +
+      '"body" : "whats up?"' +
+    '},'+
+    '"schedule": {'+
+      '"date" :  "1490789857517"'+
+    '}'+
+   '}\');'
+);
