@@ -131,7 +131,7 @@ StorageUtils.query(
 StorageUtils.query(
   'insert into messages (userid, message) values (1, \'' +
   '{ ' +
-    '"detials" :{' +
+    '"details" :{' +
       '"title" : "hi man",' +
       '"body" : "whats up?",' +
       '"sender" : "אמא ואבא"' +
@@ -144,7 +144,7 @@ StorageUtils.query(
 StorageUtils.query(
   'insert into messages (userid, message) values (1, \'' +
   '{ ' +
-    '"detials" :{' +
+    '"details" :{' +
       '"title" : "hi dude",' +
       '"body" : "how are you?"' +
     '},'+
@@ -156,7 +156,7 @@ StorageUtils.query(
 StorageUtils.query(
   'insert into messages (userid, message) values (2, \'' +
   '{ ' +
-    '"detials" :{' +
+    '"details" :{' +
       '"title" : "bro",' +
       '"body" : "sup the whack playstation whack?"' +
     '},'+
@@ -168,7 +168,7 @@ StorageUtils.query(
 StorageUtils.query(
   'insert into messages (userid, message) values (2, \'' +
   '{ ' +
-    '"detials" :{' +
+    '"details" :{' +
       '"title" : "hi man",' +
       '"body" : "whats up?"' +
     '},'+
@@ -180,7 +180,7 @@ StorageUtils.query(
 StorageUtils.query(
   'insert into messages (userid, message) values (3, \'' +
   '{ ' +
-    '"detials" :{' +
+    '"details" :{' +
       '"title" : "hi man",' +
       '"body" : "whats up?"' +
     '},'+

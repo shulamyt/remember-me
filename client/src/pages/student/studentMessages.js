@@ -20,15 +20,13 @@ class StudentMessages extends React.Component{
 		    slidesToScroll: 1,
 		    adaptiveHeight: true,
 		    arrows: true
+
 		};
 
 		return (
-			<div>
-				<h2>מסרים אחרונים</h2>
-				<Slider {...settings}>
-					{this.getMessagesBody()}
-				</Slider>
-			</div>
+			<Slider {...settings}>
+				{this.getMessagesBody()}
+			</Slider>
 		);
 	}
 
@@ -38,14 +36,14 @@ class StudentMessages extends React.Component{
 			messages = this.props.messages.map((message)=>{
 				return (
 					<div key={message.id} className="message">
-						<div className="message-body">{message.body}</div>
-						<div className="message-sender">{message.title}</div>
+						<div className="message-body">{message.details.body}</div>
+						<div className="message-sender">{message.details.title}</div>
 					</div>
 				);
 			});
 		}
 
-		return messages;
+		return messages;		
 	}
 }
 

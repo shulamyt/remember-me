@@ -33,9 +33,7 @@ class RememberMe extends React.Component{
 	onCompleteClicked(message){
 		let newMessage = {message,
 							userid: this.state.currentStudent.id};
-		RestService.post('/message', newMessage).then((postedMessage)=> {
-			console.log(postedMessage);
-		}).catch((err)=> {console.log("error posting new message: " + err)});
+		return(RestService.post('/message', newMessage));
 	}
 
 	onStudentClick(student){

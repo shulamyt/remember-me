@@ -24,13 +24,23 @@ class StudentPage extends React.Component{
 			<div className="student-page">
 				<div className="logo"/>
                 <CreateMessage studentName={this.props.student.name}
-                                onCompleteClicked={this.props.onCompleteClicked}/>
+                                onCompleteClicked={this.onCompleteClicked.bind(this)}/>
 				<StudentDetails student={this.props.student}/>
 				<div className="back-to-list-button" onClick={this.props.onBackToStudentsList}>חזרה לרשימת הילדים</div>
 				<StudentMessages messages={this.state.messages}/>
 			</div>
 		);
 	}
+
+	onCompleteClicked(message){
+		let self = this;
+		this.props.onCompleteClicked(message).then((postedMessage)=>{
+			console.log(postedMessage);
+			self.fetchMessages();
+		}).catch((err)=>{
+			console.error("error posting message" + err);
+		});
+	} 
 
 	fetchMessages(){
 		let self = this;

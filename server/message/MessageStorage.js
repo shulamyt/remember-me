@@ -2,7 +2,7 @@ const StorageUtils = require('./../utils/storage/StorageUtils');
 class MessageStorage {
 
     getByUser(id) {
-        return StorageUtils.query('select message from messages where userid=$1', [new Number(id)])
+        return StorageUtils.query('select * from messages where userid=$1', [new Number(id)])
                     .then((result) => (result.rows));
     }
 

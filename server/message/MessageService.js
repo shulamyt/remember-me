@@ -2,6 +2,28 @@ const Storage = require('./MessageStorage');
 
 class MessageService {
     getByStudent(studenId) {
+        return new Promise((resolve, reject)=>{
+            Storage.getByUser(studenId).then((fetchedMessages)=>{
+                    for(var i = 0; i < fetchedMessages.length; i++){
+                        let message = fetchedMessages[i];
+                        if(message.message === undefined || message.message === null){
+                            continue;
+                        }
+                        var messageData;
+                        try{
+                            messageData = JSON.parse(message.message);
+                        }
+                        catch(error){
+                            reject("failed to parse message message " + message.message);
+                        }
+                        fetchedMessages[i] = Object.assign(
+                            {id: message.id, 
+                            mentorId: message.mentorid}, 
+                            messageData);
+                    }
+                    resolve(fetchedMessages);
+            });
+        });
         return Storage.getByUser(studenId);
     }
 
