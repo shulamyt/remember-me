@@ -1,6 +1,11 @@
 {
-	"name" : "עדי",
+	"name" : "תמימה",
+	"age" : 9
+	"id" : "111",
+	"lastName" : "נכטשטרן",
 	"age" : 9,
-	"image" : "http://img.mako.co.il/2016/12/19/orna_i.jpg"
-
+	"pic" : "http://img.mako.co.il/2010/12/07/yeekk_c.jpg",
+	"hobbies" : "ללכת לשחק ולרוץ",
+	"about" : "אוהבת הכי בעולם את אמא שלי",
+	"gender" : "נ"
 }
