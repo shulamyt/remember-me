@@ -29,7 +29,7 @@ class MessageWS {
             let notification = {
                 messageId: message.id,
                 date: schedule.date
-            }
+            };
             NotificationScheduler.scheduleByDate(notification);
             return res.json(message);
         })

@@ -26,11 +26,8 @@ class NotificationScheduler {
     _notify(messageId){
         MessageService.get(messageId).then((messageObj) => {
             console.log(messageId + ": Scheduler is working!!!");
-            let scId = NotificationService.send({
-                clientId: messageObj.userid,
-                title: messageObj.message.details.title,
-                body: messageObj.message.details.body
-            });
+            //let notification = Object.assign({clientId: messageObj.userid}, messageObj.message.details);
+            let scId = NotificationService.send({clientId: messageObj.userid, notification: messageObj.message.details});
             this.massagesMap[messageId] = scId;
         }).catch((message)=>{throw new Error("error message handeling " + message)});
     }

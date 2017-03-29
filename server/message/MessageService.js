@@ -1,4 +1,5 @@
 const Storage = require('./MessageStorage');
+
 class MessageService {
     getByStudent(studenId) {
         return Storage.getByUser(studenId);
@@ -6,14 +7,18 @@ class MessageService {
 
     add({userid, message}) {
         return new Promise((resolve, reject)=>{
-            Storage.add({userid, message}).then((fetchedMessage)=>resolve(this._toMessage(fetchedMessage))).catch((message)=>{throw new Error("error add message to storage " + message)});
+            Storage.add({userid, message})
+            .then((fetchedMessage)=> {
+                let message = this._toMessage(fetchedMessage);
+                resolve(message)
+            }).catch((message)=>{throw new Error("error add message to storage " + message)});
         });
     }
 
     get(id){
         return new Promise((resolve, reject)=>{
             Storage.get(id).then((fetchedMessage)=>resolve(this._toMessage(fetchedMessage)))
-                            .catch((message)=>{throw new Error("error get message wit id " + id)});
+                            .catch((message)=>{throw new Error("error get message with id " + id)});
         });
     }
 
