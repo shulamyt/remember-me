@@ -21,8 +21,7 @@ class RememberMe extends React.Component{
 		}
 	}
 
-	fetchStudentsByMentorId(){
-		let mentorId = 111;
+	fetchStudentsByMentorId(mentorId){
 		let self = this;
 		RestService.get('/student?mentorId=' + mentorId).then(function(students) {
 			console.log('get: student by mentorId = ' + mentorId);
@@ -36,7 +35,7 @@ class RememberMe extends React.Component{
 	}
 
 	onLoginSuccess(user){
-		this.fetchStudentsByMentorId();
+		this.fetchStudentsByMentorId(user.id);
 		this.setState({currentUser: user, currentPage: STUDENTS_LIST_PAGE});
 	}
 
