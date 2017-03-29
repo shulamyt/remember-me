@@ -1,5 +1,6 @@
 .create-message{
     float: right;
+    margin-right: 60px;
 
     .my-message-title{
         font-size: 18PX;
@@ -41,4 +42,24 @@
     .date-field{
         display: inline-block;
     }
+
+    .radio-icon-envalope{
+        @extend .icon;
+        background: url('../../res/envelope.svg') no-repeat center center;
+    }
+    .radio-icon-user{
+        @extend .icon;
+        background: url('../../res/user.svg') no-repeat center center;
+    }
+    .radio-icon-clock{
+        @extend .icon;
+        background: url('../../res/clock.svg') no-repeat center center;
+    }   
+}
+
+.icon{
+    height: 62px;
+    width: 62px;
+    background-size: 77%;
+    display: inline-block;
 }

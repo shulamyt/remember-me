@@ -21,24 +21,21 @@ class CreateMessage extends React.Component{
         return  <div>
                     <div className="my-message-title" onChange={this.onWhenToSendChanged.bind(this)}>מתי לשלוח
                         <label className="radio">
-                            <div className="radio-label">עכשיו</div>
-                            <input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/>            
+                            <input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/> עכשיו
                         </label>
                         <label className="radio">
-                            {this.state.whenToSend === "date" ? this.renderDateField() : null}
-                            <div className="radio-label">בחר לפי תאריך ושעה</div>
-                            <input type="radio"  value="date" name="timing" defaultChecked={this.state.whenToSend === "date"}/> 
+                            <input type="radio"  value="date" name="timing" defaultChecked={this.state.whenToSend === "date"}/> בחק לפי תאריך ושעה
                         </label>
                         <label className="radio">
-                            <div className="radio-label">בחר לפי תדירות</div>
-                            <input type="radio" value="frequency" name="timing" defaultChecked={this.state.whenToSend === "frequency"}/>
+                            <input type="radio" value="frequency" name="timing" defaultChecked={this.state.whenToSend === "frequency"}/> בחר לפי תדירות
                         </label>
                     </div>
+                    {this.state.whenToSend === "date" ? this.renderDateField() : null}
                 </div>
     }
 
     renderDateField(){
-        return <div className="date-field">
+        return <div>
                     <DateTime  />
                 </div>
     }
@@ -60,15 +57,18 @@ class CreateMessage extends React.Component{
     }
 
     renderMyMessage(){
+        let maxlength = 110;
+        var remainingChars = maxlength - this.state.message.length;
         return <div className="my-message">
                     <div className="my-message-title">המסר שלי</div>
                     <textarea className="message-text"
+                              maxLength={maxlength}
                               value={this.state.message}
                               onChange={(event)=>{
                                   this.setState({message: event.target.value})
                         }}>
                     </textarea>
-                    <div className="ramaining-size">עוד {} תווים להקלדה</div>
+                    <div className="ramaining-size">עוד {remainingChars} תווים להקלדה</div>
                 </div>
     }
 
@@ -82,6 +82,10 @@ class CreateMessage extends React.Component{
                         schedule: {date: date}
                     }
         this.props.onCompleteClicked(message);
+        this.setState({whenToSend: "now"});
+        this.setState({message: ""});
+        this.setState({sender: ""});
+        this.setState({sendDate: null});
     }
 
 	render(){
