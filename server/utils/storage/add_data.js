@@ -5,7 +5,7 @@ StorageUtils.query(
     '"name" : "עמרו",' +
     '"lastName" : "כוהן",' +
     '"age" : "6",' +
-    '"image": "/resource/img/amro.jpg",' +
+    '"image": "/res/amro.jpg",' +
     '"hobbies": "אוכל בולים",' +
     '"about": "אוהב לשחק עם הכלב"' +
   '}\');'
@@ -17,7 +17,7 @@ StorageUtils.query(
     '"name" : "דוד",' +
     '"lastName" : "גולדברג",' +
     '"age" : "36",' +
-    '"image": "/resource/img/david.jpg",' +
+    '"image": "/res/adi.jpg",' +
     '"hobbies":  "לועס בקבוקים",' +
     '"about": "אוהב לשחק עם הכלב"' +
   '}\');'
