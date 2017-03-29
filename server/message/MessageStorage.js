@@ -7,7 +7,7 @@ class MessageStorage {
     }
 
     get(id) {
-      return StorageUtils.query('select * from message where id=$1', [new Number(id)])
+      return StorageUtils.query('select * from messages where id=$1', [new Number(id)])
                   .then((result) => (result.rows[0]));
     }
 
