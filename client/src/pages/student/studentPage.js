@@ -3,16 +3,17 @@ import './student-page.scss';
 import StudentDetails from './StudentDetails.js';
 
 
-class studentPage extends React.Component{
+class StudentPage extends React.Component{
 
 	render(){
 		return (
 			<div className="student-page">
 				<div className="logo">Remeber Me</div>
 				<StudentDetails student={this.props.student}/>
+				<div className="back-to-list-button">לעבור לרשימת הילדים</div>
 			</div>
 		);
 	}
 }
 
-export default studentPage;
+export default StudentPage;

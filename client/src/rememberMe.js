@@ -1,5 +1,6 @@
 import React from 'react';
 import StudentsListPage from './pages/studentsListPage';
+import StudentPage from './pages/student/studentPage'
 import LoginPage from './pages/loginPage';
 import * as RestService from './utilities/rest-utilities';
 
@@ -62,6 +63,9 @@ class RememberMe extends React.Component{
 			case LOGIN_PAGE:
 				return this.renderLoginPage();
 				break;
+			case STUDENT_PAGE:
+				return this.renderStudentPage();
+				break;				
 			default:
 				console.log("Opps..");
 		}

@@ -17,7 +17,7 @@ class StudentsListPage extends React.Component{
 				return (
 					<div key={student.id} className="student" onClick={this.props.onStudentClick.bind(student)}>
 						<img className="image" src={student.image}/>
-						<div className="student-details">{student.name}</div>
+						<div className="student-list-details">{student.name}</div>
 					</div>
 				);
 			});
