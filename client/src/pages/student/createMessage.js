@@ -74,11 +74,9 @@ class CreateMessage extends React.Component{
 
     onCompleteClicked(){
         let message = {
-                        message: {
-                                details: {title: this.state.sender ,
-                                            body: this.state.message},
-                                schedule: {date: this.state.sendDate}
-                            }
+                        details: {title: this.state.sender ,
+                                    body: this.state.message},
+                        schedule: {date: this.state.sendDate}
                     }
         this.props.onCompleteClicked(message);
     }
