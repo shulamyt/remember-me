@@ -6,6 +6,11 @@ class MessageStorage {
                     .then((result) => (result.rows));
     }
 
+    get(id) {
+      return StorageUtils.query('select message from where id=$1', [new Number(id)])
+                  .then((result) => (result.rows[0]));      
+    }
+
     add({userid, message}) {
         return StorageUtils.query('insert into messages (userid, message) values ($1, $2) returning *',
                                     [userid, message])
