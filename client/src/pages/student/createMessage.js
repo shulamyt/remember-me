@@ -2,7 +2,6 @@ import React from 'react';
 import './create-message.scss';
 import DateTime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
-
 class CreateMessage extends React.Component{
 
     constructor(props){
@@ -58,14 +57,15 @@ class CreateMessage extends React.Component{
 
     renderMyMessage(){
         return <div className="my-message">
-                    <div className="my-message-title">המסר שלי </div>
-                    <textarea className="message-text"
-                              value={this.state.message}
-                              onChange={(event)=>{
-                                  this.setState({message: event.target.value})
-                        }}>
-                    </textarea>
-                    <div>עוד {} תווים להקלדה</div>
+                    <div className="my-message-title">המסר שלי
+                        <textarea className="message-text"
+                                  value={this.state.message}
+                                  onChange={(event)=>{
+                                      this.setState({message: event.target.value})
+                            }}>
+                        </textarea>
+                        <div>עוד {} תווים להקלדה</div>
+                    </div>
                 </div>
     }
 
