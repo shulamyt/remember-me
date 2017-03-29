@@ -9,18 +9,18 @@ const Scheduler = require('node-schedule');
 
 class SchedulerService{
 
-  add(scheduleType, executeFunction) {
-    return Scheduler.scheduleJob(scheduleType,executeFunction);
-  }
+    add(scheduleType, executeFunction) {
+        return Scheduler.scheduleJob(scheduleType,executeFunction);
+    }
 
-  cancel(id){
-    Scheduler.cancel(id);
-  }
+    cancel(id){
+        Scheduler.cancel(id);
+    }
 
-  update(id, scheduleType, executeFunction){
-    this.cancel(id);
-    return this.add(scheduleType, executeFunction);
-  }
+    update(id, scheduleType, executeFunction){
+        this.cancel(id);
+        return this.add(scheduleType, executeFunction);
+    }
 
 }
 module.exports = SchedulerService;
