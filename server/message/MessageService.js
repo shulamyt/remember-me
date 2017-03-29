@@ -8,7 +8,7 @@ class MessageService {
         return new Promise((resolve, reject)=>{
             Storage.add({userid, message}).then((messageRow)=>{
                 resolve(messageRow);
-            });
+            }).catch((message)=>{"error add message to storage " + message});
         });
     }
 
