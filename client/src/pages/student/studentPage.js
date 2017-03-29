@@ -1,6 +1,6 @@
 import React from 'react';
 import './student-page.scss';
-import StudentDetails from './StudentDetails.js';
+import StudentDetails from './studentDetails.js';
 
 
 class StudentPage extends React.Component{
