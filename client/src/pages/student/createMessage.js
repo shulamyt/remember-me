@@ -22,8 +22,7 @@ class CreateMessage extends React.Component{
 
 	renderWhenToSend(){
 		return  <div className="when-to-send">
-					<div className="radio-icon-clock"></div>
-					<div className="my-message-title" onChange={this.onWhenToSendChanged.bind(this)}>מתי לשלוח
+					<div className="my-message-title" onChange={this.onWhenToSendChanged.bind(this)}>מתי לשלוח<div className="radio-icon-clock"></div>
 						<label className="radio">
 							<div className="radio-label">עכשיו</div>
 							<input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/>            
@@ -56,28 +55,26 @@ class CreateMessage extends React.Component{
 
 	renderWhoSends(){
 		return <div className="who-sends">
-					<div className="radio-icon-user"></div>	
-					<div className="my-message-title">מי שולח</div>
-					<input className="sender-input"
-						   value={this.state.sender}
-						   onChange={(event)=>{
-							   this.setState({sender: event.target.value})
-						   }}>
-					</input>
+						<div className="my-message-title">מי שולח<div className="radio-icon-user"></div>	</div>
+						<input className="sender-input"
+							   value={this.state.sender}
+							   onChange={(event)=>{
+								   this.setState({sender: event.target.value})
+							   }}>
+						</input>				
 				</div>
 	}
 
 	renderMyMessage(){
 		return <div className="my-message">
-					<div className="radio-icon-envalope"></div>
-					<div className="my-message-title">המסר שלי</div>
+					<div className="my-message-title">המסר שלי<div className="radio-icon-envalope"></div></div>
 					<textarea className="message-text"
 							  value={this.state.message}
 							  onChange={(event)=>{
 								  this.setState({message: event.target.value})
 						}}>
 					</textarea>
-					<div className="ramaining-size">עוד {} תווים להקלדה</div>
+					<div className="ramaining-size">עוד {} תווים להקלדה</div>				
 				</div>
 	}
 

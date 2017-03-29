@@ -6,6 +6,7 @@
         font-size: 18PX;
         font-weight: bold;
         text-align: center;
+        margin-bottom: 6px;
     }
 
     .message-text{
@@ -58,8 +59,12 @@
 }
 
 .icon{
-    height: 62px;
-    width: 62px;
-    background-size: 77%;
+    height: 17px;
+    width: 25px;
+    background-size: 70%;
+    display: inline-block;
+}
+
+.message-input{
     display: inline-block;
 }
