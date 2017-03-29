@@ -8,6 +8,22 @@
     .student-picture{
         width: 232px;
         height: 248px;
+        border-radius: 25px;
+        padding: 5px 15px 15px 15px;
+        display: block;
+        margin: auto;
+    }
 
+    .student-name{
+        font-weight: bold;
+        text-align: center;
+        font-size: 24px;
+        padding: 10px 10px 5px 10px;
+    }
+
+    .student-properties{
+        text-align: right;
+        font-size: 20px;
+        padding: 3px 15px 3px 6px;
     }
 }
