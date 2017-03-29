@@ -5,10 +5,21 @@ class UserService {
             Storage.get().then((fetchedUsers)=>{
                     for(var i = 0; i < fetchedUsers.length; i++){
                         let user = fetchedUsers[i];
+                        if(user.data === undefined || user.data === null){
+                            continue;
+                        }
+                        var userData;
+                        try{
+                            userData = JSON.parse(user.data);
+                        }
+                        catch(error){
+                            reject("failed to parse user data " + user.data);
+                        }
+
                         fetchedUsers[i] = Object.assign(
                             {id: user.id,
                             name:user.name}, 
-                            JSON.parse(user.data));
+                            userData);
                     }
                     resolve(fetchedUsers);
             });
@@ -24,13 +35,23 @@ class UserService {
         return new Promise((resolve, reject)=>{
             Storage.getByUserName(user.name).then((fetchedUser)=>{
                 if(fetchedUser.password == user.password){
-                    let temp = JSON.parse(fetchedUser.data);
+                    if(fetchedUser.data === undefined || fetchedUser.data === null){
+                        resolve(fetchedUser);
+                    }
+                    var userData;
+                    try{
+                         userData = JSON.parse(fetchedUser.data);
+                    }
+                    catch(error){
+                        reject("failed to parse user data " + fetchedUser.data);
+                    }
+                    
                     fetchedUser = Object.assign(
                         {
                         id: fetchedUser.id,
                         name: fetchedUser.name,
                         password: fetchedUser.password},
-                        JSON.parse(fetchedUser.data));
+                        userData);
                     resolve(fetchedUser);
                 }
                 else{
