@@ -29,8 +29,16 @@ class RememberMe extends React.Component{
 		});
 	}
 
+	componentDidMount(){
+		let self = this;
+		RestService.get('/student/id/111').then(function(currentStudent) {
+			self.setState({currentStudent});
+		});
+
+	}
+
 	onStudentClick(student){
-		this.setState({currentPage: STUDENT_PAGE, currentStudent: student})		
+		this.setState({currentPage: STUDENT_PAGE, currentStudent: student})
 	}
 
 	onLoginSuccess(user){
@@ -55,16 +63,7 @@ class RememberMe extends React.Component{
 	}
 
 	render(){
-		switch(this.state.currentPage) {
-			case STUDENTS_LIST_PAGE:
-				return this.renderStudentsListPage();
-				break;
-			case LOGIN_PAGE:
-				return this.renderLoginPage();
-				break;
-			default:
-				console.log("Opps..");
-		}
+		return  this.renderStudentPage();
 	}
 }
 
