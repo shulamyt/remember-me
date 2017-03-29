@@ -7,15 +7,13 @@ const MessageWS = require('./message/MessageWS');
 const StudentWS = require('./student/StudentWS');
 const path = require('path');
 
+
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 const userWS = new UserWS();
 const messageWS = new MessageWS();
 const studentWS = new StudentWS();
 const notificationWS = new NotificationWS();
-
-app.use(express.static('/', path.resolve(__dirname + '/../client/dist'), {
-  index: 'index.html'
-}));
-
 
 app.use(bodyParser.json());
 
