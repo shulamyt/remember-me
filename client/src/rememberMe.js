@@ -5,6 +5,7 @@ import * as RestService from './utilities/rest-utilities';
 
 const STUDENTS_LIST_PAGE = "studentsListPage";
 const LOGIN_PAGE = "loginPage";
+const STUDENT_PAGE = "studentPage";
 
 class RememberMe extends React.Component{
 
@@ -13,7 +14,8 @@ class RememberMe extends React.Component{
 		this.state = {
 			currentPage: LOGIN_PAGE,
 			students: [],
-			currentUser: {}
+			currentUser: {},
+			currentStudent: {}
 		}
 	}
 
@@ -27,14 +29,22 @@ class RememberMe extends React.Component{
 		});
 	}
 
+	onStudentClick(student){
+		this.setState({currentPage: STUDENT_PAGE, currentStudent: student})		
+	}
+
 	onLoginSuccess(user){
 		this.fetchStudentsByMentorId();
 		this.setState({currentUser: user, currentPage: STUDENTS_LIST_PAGE});
 	}
 
+	renderStudentPage(){
+		return <StudentPage student={this.state.currentStudent}/>
+	}
+
 	renderStudentsListPage(){
 		return(
-			<StudentsListPage students={this.state.students}/>
+			<StudentsListPage students={this.state.students} onStudentClick={this.onStudentClick.bind(this)}/>
 		);
 	}
 

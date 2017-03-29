@@ -1,11 +1,42 @@
 .students-list-page{
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	direction: rtl;
+}
+
+.students-list-page-title{
+	font-size: 36px;
+	font-weight: bold;
+	color: #4ABDAC;
+	text-align: center;
+	margin-bottom: 10px;
+
+}
+.students-list-page{
 	.student{
-		width: 150px;
-		height: 100px;
-		background: blue;
-		float: left;
-		margin-right: 5px;
-		margin-bottom: 5px;
+		width: 300px;
+		height: 130px;
+		background: #FFEEDD;
+		float: right;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		border: 1px solid #777799;
+		border-radius: 5px;
+		position: relative;
+	}
+
+	.student-details{
+		color: #555555;
+		font-size: 20px;
+		display: inline-block;
+		position: absolute;
+		top: 50px;
+		left: 15%;
+	}
+
+	.image{
+		height: 110px;
+		width: 100px;
+		padding: 10px;
 	}
 }
 

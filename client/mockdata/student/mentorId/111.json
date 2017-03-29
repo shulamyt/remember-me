@@ -1,14 +1,22 @@
 [
 	{
 		"id": 1,
-		"name" : "Tamar",
-		"age" : 9
+		"name" : "עדי המי",
+		"age" : 9,
+		"image" : "http://img.mako.co.il/2016/12/19/orna_i.jpg"
+
 	},
 
 	{
 		"id": 2,
-		"name" : "Yedidya",
-		"age" : 7
+		"name" : "לירון דגן",
+		"age" : 7,
+		"image" : "http://static.tvgcdn.net/mediabin/showcards/celebs/j-l/thumbs/judi-dench_sc_768x1024.png"
+	},
+
+	{
+		"id": 3,
+		"name" : "פולינה וקסלר",
+		"age" : 5
 	}
-	
 ]

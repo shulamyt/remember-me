@@ -1,16 +1,19 @@
 [
 	{
-		"name" : "Tamar",
-		"age" : 9
+		"name" : "עדי",
+		"age" : 9,
+		"image" : "http://img.mako.co.il/2016/12/19/orna_i.jpg"
+
 	},
 
 	{
-		"name" : "Yedidya",
-		"age" : 7
+		"name" : "לירון",
+		"age" : 7,
+		"image" : "http://static.tvgcdn.net/mediabin/showcards/celebs/j-l/thumbs/judi-dench_sc_768x1024.png"
 	},
 
 	{
-		"name" : "David",
+		"name" : "פולינה",
 		"age" : 5
 	}
 ]
