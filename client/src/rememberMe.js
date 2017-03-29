@@ -39,13 +39,8 @@ class RememberMe extends React.Component{
 		this.setState({currentUser: user, currentPage: STUDENTS_LIST_PAGE});
 	}
 
-	onCompleteClicked(message){
-		var ddd= "ddd";
-	}
-
 	renderStudentPage(){
-		return <StudentPage student={this.state.currentStudent}
-							onCompleteClicked={this.onCompleteClicked.bind(this)}/>
+		return <StudentPage student={this.state.currentStudent}/>
 	}
 
 	renderStudentsListPage(){
