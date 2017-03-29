@@ -23,7 +23,10 @@ class LoginPage extends React.Component{
 	render(){
 		return (
 			<div className="login-page">
-				<div className="logo"></div>
+				<div className="logo">
+					<div className="logo-name"></div>
+					<div className="logo-icon"></div>
+				</div>
 				<div className="login-box">
 					<div className="login-box-title">כניסה לחשבונך</div>
 					<div className="login-username">	

@@ -1,8 +1,16 @@
 .login-page{
 	font-family: Tahoma;
 	color: #555555;
-/*	background-image: url('./res/bg-hq.jpg');*/
+	background-image: url('./../res/login-bg.jpg');
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
 }
 
 .logo{
@@ -18,6 +26,10 @@
 	border: 1px solid #777799;
 	/*border-radius: 5px;*/
 	padding: 14px 26px;
+	width: 300px;
+	position: absolute;
+	left: 31%;
+	top: 160px;
 }
 
 .login-box-title{
