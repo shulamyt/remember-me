@@ -13,8 +13,19 @@ class MessageService {
                     console.log("no schedule was found!");
                     reject();
                 }
-                NotificationScheduler.scheduleByDate({message.messageId, schedule.date});
+                NotificationScheduler.scheduleByDate({messageId: message.messageId, date: schedule.date});
                 resolve();
+            });
+        });
+    }
+
+    get(id){
+        return new Promise((resolve, reject)=>{
+            Storage.get(id).then((messageRow) => {
+                resolve({
+                            message: messageRow.message,
+                            sudentId: message.userid
+                        });
             });
         });
     }
