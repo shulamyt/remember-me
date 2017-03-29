@@ -21,21 +21,24 @@ class CreateMessage extends React.Component{
         return  <div>
                     <div className="my-message-title" onChange={this.onWhenToSendChanged.bind(this)}>מתי לשלוח
                         <label className="radio">
-                            <input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/> עכשיו
+                            <div className="radio-label">עכשיו</div>
+                            <input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/>            
                         </label>
                         <label className="radio">
-                            <input type="radio"  value="date" name="timing" defaultChecked={this.state.whenToSend === "date"}/> בחק לפי תאריך ושעה
+                            {this.state.whenToSend === "date" ? this.renderDateField() : null}
+                            <div className="radio-label">בחר לפי תאריך ושעה</div>
+                            <input type="radio"  value="date" name="timing" defaultChecked={this.state.whenToSend === "date"}/> 
                         </label>
                         <label className="radio">
-                            <input type="radio" value="frequency" name="timing" defaultChecked={this.state.whenToSend === "frequency"}/> בחר לפי תדירות
+                            <div className="radio-label">בחר לפי תדירות</div>
+                            <input type="radio" value="frequency" name="timing" defaultChecked={this.state.whenToSend === "frequency"}/>
                         </label>
                     </div>
-                    {this.state.whenToSend === "date" ? this.renderDateField() : null}
                 </div>
     }
 
     renderDateField(){
-        return <div>
+        return <div className="date-field">
                     <DateTime  />
                 </div>
     }

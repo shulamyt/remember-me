@@ -2,7 +2,7 @@
     float: right;
 
     .my-message-title{
-        font-size: 20PX;
+        font-size: 18PX;
         font-weight: bold;
         text-align: center;
     }
@@ -32,5 +32,13 @@
         display: block;
         margin-bottom: 10px;
         margin-top: 5px;
+        font-size: 14px;
+        text-align: right;
+    }
+    .radio-label{
+        display: inline-block;
+    }
+    .date-field{
+        display: inline-block;
     }
 }
