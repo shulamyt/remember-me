@@ -10,7 +10,8 @@ class StudentPage extends React.Component{
 		return (
 			<div className="student-page">
 				<div className="logo"/>
-                <CreateMessage studentName={this.props.student.name}/>
+                <CreateMessage studentName={this.props.student.name}
+                                onCompleteClicked={this.props.onCompleteClicked}/>
 				<StudentDetails student={this.props.student}/>
 				<div className="back-to-list-button">לעבור לרשימת הילדים</div>
 			</div>
