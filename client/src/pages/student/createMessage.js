@@ -1,7 +1,6 @@
 import React from 'react';
 import './create-message.scss';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import DateTime from 'react-datetime';
 
 class CreateMessage extends React.Component{
 
@@ -11,7 +10,7 @@ class CreateMessage extends React.Component{
             whenToSend: "now",
             message: "",
             sender: "",
-            sendDate: ""
+            sendDate: null
         }
     }
     onWhenToSendChanged(event){
@@ -37,14 +36,13 @@ class CreateMessage extends React.Component{
 
     renderDateField(){
         return <div>
-                    <DatePicker dateFormat="DD/MM/YYYY"
-                                selected={this.state.sendDate}
-                                onChange={this.onDatePickerChange.bind(this)} />
+                    <DateTime   selected={this.state.sendDate}
+                                onChange={this.onDateChange.bind(this)} />
                 </div>
     }
 
-    onDatePickerChange(selectedDate){
-        this.setState({sendDate: selectedDate})
+    onDateChange(selectedDate){
+        this.setState({sendDate: selectedDate.toDate().getTime()})
     }
 
     renderWhoSends(){
@@ -73,10 +71,13 @@ class CreateMessage extends React.Component{
     }
 
     onCompleteClicked(){
+        let currentDate = new Date();
+
+        let date = this.state.sendDate != null ? this.state.sendDate : currentDate.getTime();
         let message = {
                         details: {title: this.state.sender ,
                                     body: this.state.message},
-                        schedule: {date: this.state.sendDate}
+                        schedule: {date: date}
                     }
         this.props.onCompleteClicked(message);
     }
