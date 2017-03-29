@@ -3,6 +3,7 @@ import StudentsListPage from './pages/studentsListPage';
 import StudentPage from './pages/student/studentPage'
 import LoginPage from './pages/loginPage';
 import * as RestService from './utilities/rest-utilities';
+import './remember-me.scss'
 
 const STUDENTS_LIST_PAGE = "studentsListPage";
 const LOGIN_PAGE = "loginPage";

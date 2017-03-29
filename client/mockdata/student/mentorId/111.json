@@ -17,6 +17,10 @@
 	{
 		"id": 3,
 		"name" : "פולינה וקסלר",
-		"age" : 5
+		"age" : 5,
+		"image" : "http://img.mako.co.il/2010/12/07/yeekk_c.jpg",
+		"hobbies" : "ללכת לשחק ולרוץ",
+		"about" : "אוהבת הכי בעולם את אמא שלי",
+		"gender" : "נ"
 	}
 ]

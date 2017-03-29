@@ -9,7 +9,7 @@ class StudentPage extends React.Component{
 	render(){
 		return (
 			<div className="student-page">
-				<div className="logo">Remeber Me</div>
+				<div className="logo"/>
                 <CreateMessage studentName={this.props.student.name}/>
 				<StudentDetails student={this.props.student}/>
 				<div className="back-to-list-button">לעבור לרשימת הילדים</div>
