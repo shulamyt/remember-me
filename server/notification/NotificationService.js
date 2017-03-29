@@ -24,25 +24,26 @@ class NotificationService {
       notification: {title, body}
     };
 
-    const client = clientStorage.get(clientId);
-
-    if(!client) {
-        throw new Error('client ${clientId} not registered!');
-    }
-
     // Send a message to the device corresponding to the provided
     // registration token.
     return new Promise((resolve, reject) => {
-        firebaseAdmin.messaging().sendToDevice(client.token, payload)
-        .then(function(response) {
-          console.log("Successfully sent message:", response);
-          resolve(response);
-        })
-        .catch(function(error) {
-          console.log("Error sending message:", error);
-          reject(error);
+        clientStorage.getById(clientId).then((client) => {
+            if(typeof client === 'undefined' || client === null) {
+                throw new Error('client ${clientId} not registered!');
+            }
+
+            firebaseAdmin.messaging().sendToDevice(client.token, payload)
+            .then(function(response) {
+              console.log("Successfully sent message:", response);
+              resolve(response);
+            })
+            .catch(function(error) {
+              console.log("Error sending message:", error);
+              reject(error);
+            });
         });
     });
+
   }
 }
 
