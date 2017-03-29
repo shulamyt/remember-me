@@ -10,7 +10,8 @@ class CreateMessage extends React.Component{
             whenToSend: "now",
             message: "",
             sender: "",
-            sendDate: null
+            sendDate: null,
+            sound: 'notif1'
         }
     }
     onWhenToSendChanged(event){
@@ -69,15 +70,34 @@ class CreateMessage extends React.Component{
                 </div>
     }
 
+    renderNotificationSound(){
+        return <div className="my-message">
+                    <div className="my-message-title">צליל הודעה</div>
+                    <select
+                              value={this.state.sound}
+                              onChange={(event)=>{
+                                  this.setState({sound: event.target.value})
+                        }}>
+                        <option value="notif1">כפיים</option>
+                        <option value="notif2">פעמון</option>
+                        <option value="notif3">שריקה</option>
+                        <option value="notif4">שימחה</option>
+                    </select>
+                </div>
+    }
+
     onCompleteClicked(){
         let currentDate = new Date();
 
         let date = this.state.sendDate != null ? this.state.sendDate : currentDate.getTime();
         let message = {
-                        details: {title: this.state.sender ,
-                                    body: this.state.message},
-                        schedule: {date: date}
-                    }
+            details: {
+                title: this.state.sender ,
+                body: this.state.message,
+                sound: this.state.sound
+            },
+            schedule: {date: date}
+        };
         this.props.onCompleteClicked(message);
         this.setState({whenToSend: "now"});
         this.setState({message: ""});
@@ -91,6 +111,7 @@ class CreateMessage extends React.Component{
                 {this.renderMyMessage()}
                 {this.renderWhoSends()}
                 {this.renderWhenToSend()}
+                {this.renderNotificationSound()}
                 <button onClick={this.onCompleteClicked.bind(this)}>שלח</button>
 
 			</div>
