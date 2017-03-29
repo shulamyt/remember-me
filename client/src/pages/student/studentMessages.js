@@ -20,13 +20,15 @@ class StudentMessages extends React.Component{
 		    slidesToScroll: 1,
 		    adaptiveHeight: true,
 		    arrows: true
-
 		};
 
 		return (
-			<Slider {...settings}>
-				{this.getMessagesBody()}
-			</Slider>
+			<div>
+				<h2>מסרים אחרונים</h2>
+				<Slider {...settings}>
+					{this.getMessagesBody()}
+				</Slider>
+			</div>
 		);
 	}
 
@@ -43,7 +45,7 @@ class StudentMessages extends React.Component{
 			});
 		}
 
-		return messages;		
+		return messages;
 	}
 }
 
