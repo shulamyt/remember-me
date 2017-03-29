@@ -58,6 +58,7 @@ class CreateMessage extends React.Component{
     }
 
     renderMyMessage(){
+        var remainingChars = 400 - this.state.message.length;
         return <div className="my-message">
                     <div className="my-message-title">המסר שלי</div>
                     <textarea className="message-text"
@@ -66,7 +67,7 @@ class CreateMessage extends React.Component{
                                   this.setState({message: event.target.value})
                         }}>
                     </textarea>
-                    <div className="ramaining-size">עוד {} תווים להקלדה</div>
+                    <div className="ramaining-size">עוד {remainingChars} תווים להקלדה</div>
                 </div>
     }
 
