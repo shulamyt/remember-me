@@ -33,13 +33,15 @@
 	.message-body{
 		color: #383838;
 		padding: 8px;
+		height: 60px;
+		min-height: 60px;
 		word-wrap: break-word;
 	}
 
 	.message-sender{
 		color: #717171;
 		font-style: italic;
-		margin-left: 3px;
+		margin-left: 5px;
 		margin-top: 10px;
 		margin-bottom: 3px;
 		padding-bottom: 3px;
