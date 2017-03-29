@@ -2,6 +2,63 @@ const StorageUtils = require('./StorageUtils');
 StorageUtils.query(
   'insert into students (mentorid, data) values (1, \'' +
   '{ ' +
+    '"name" : "עדי",' +
+    '"lastName" : "לוי",' +
+    '"age" : "10",' +
+    '"image": "/res/adi.jpg",' +
+    '"hobbies": "ריקוד, מוסיקה,טיולים",' +
+    '"about": "ילדה חייכנית, עם שמחת חיים, מקובלת על חבריה"' +
+  '}\');'
+);
+
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "אמיר",' +
+    '"lastName" : "כוכבי",' +
+    '"age" : "12",' +
+    '"image": "/res/amir.jpg",' +
+    '"hobbies": "משחקי מחשב, כדורגל",' +
+    '"about": "ילד תחרותי, אוהב חופש ומרחב"' +
+  '}\');'
+);
+
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "עמרו",' +
+    '"lastName" : "כוהן",' +
+    '"age" : "6",' +
+    '"image": "/res/amro.jpg",' +
+    '"hobbies": "אוכל בולים",' +
+    '"about": "אוהב לשחק עם הכלב"' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "עמרו",' +
+    '"lastName" : "כוהן",' +
+    '"age" : "6",' +
+    '"image": "/res/amro.jpg",' +
+    '"hobbies": "אוכל בולים",' +
+    '"about": "אוהב לשחק עם הכלב"' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "עמרו",' +
+    '"lastName" : "כוהן",' +
+    '"age" : "6",' +
+    '"image": "/res/amro.jpg",' +
+    '"hobbies": "אוכל בולים",' +
+    '"about": "אוהב לשחק עם הכלב"' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
     '"name" : "עמרו",' +
     '"lastName" : "כוהן",' +
     '"age" : "6",' +
