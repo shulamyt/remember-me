@@ -67,16 +67,19 @@ class CreateMessage extends React.Component{
     }
 
     renderMyMessage(){
+        let maxlength = 110;
+        var remainingChars = maxlength - this.state.message.length;
         return <div className="my-message">
                     <div className="radio-icon-envalope"></div>
                     <div className="my-message-title">המסר שלי</div>
                     <textarea className="message-text"
+                              maxLength={maxlength}
                               value={this.state.message}
                               onChange={(event)=>{
                                   this.setState({message: event.target.value})
                         }}>
                     </textarea>
-                    <div className="ramaining-size">עוד {} תווים להקלדה</div>
+                    <div className="ramaining-size">עוד {remainingChars} תווים להקלדה</div>
                 </div>
     }
 
