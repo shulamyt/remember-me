@@ -39,6 +39,11 @@ module.exports = {
 				context: path.resolve(__dirname),
 				from: path.join('src/index.html'),
 				force: true
+			},
+			{
+				context: path.resolve(__dirname,'./src'),
+				from: 'res',
+				to:'res'
 			}
 		])
 	],
