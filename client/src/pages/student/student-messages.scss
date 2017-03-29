@@ -1,5 +1,35 @@
 .messages-slider{
-	width: 60%;
+	width: 765px;
+	height: 72px;
+	min-height: 72px;
+	max-height: 72px;
 	float: right;
 	display: inline-block;
+}
+
+.message{
+	direction: rtl;
+	background-color: #FCF6EF;
+	border: 1px solid #555555;
+	width: 255px;
+	height: 72px;
+	min-height: 72px;	
+	max-height: 72px;	
+	font-size: 14px;
+	margin-right: 15px;
+
+	.message-body{
+		color: #383838;
+		padding: 8px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.message-sender{
+		color: #717171;
+		font-style: italic;
+		margin-top: 3px;
+		margin-right: 18px;
+	}
 }

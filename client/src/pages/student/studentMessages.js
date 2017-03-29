@@ -16,7 +16,7 @@ class StudentMessages extends React.Component{
 		    dots: true,
 		    infinite: true,
 		    speed: 500,
-		    slidesToShow: 2,
+		    slidesToShow: 3,
 		    slidesToScroll: 1,
 		    adaptiveHeight: true,
 
@@ -35,7 +35,8 @@ class StudentMessages extends React.Component{
 			messages = this.props.messages.map((message)=>{
 				return (
 					<div key={message.id} className="message">
-						{message.text}
+						<div className="message-body">{message.body}</div>
+						<div className="message-sender">{message.sender}</div>
 					</div>
 				);
 			});
