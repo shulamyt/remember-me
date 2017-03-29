@@ -4,8 +4,8 @@
   "description": "",
   "main": "remember-me.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --bail",
-    "dev": "./node_modules/.bin/webpack-dev-server"
+    "build": "webpack --bail",
+    "dev": "webpack-dev-server"
   },
   "author": "Shula",
   "license": "ISC",
