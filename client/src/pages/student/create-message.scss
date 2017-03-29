@@ -5,11 +5,32 @@
         font-size: 20PX;
         font-weight: bold;
         text-align: center;
-
     }
+
     .message-text{
         width: 513px;
-        height: 150px
+        height: 150px;
+        border: 2px solid #4ABDAC;
+        border-radius: 5px;
     }
 
+    .ramaining-size{
+        text-align: right;
+    }
+
+    .sender-input{
+        width: 293px;
+        height: 30px;
+        border: 1px solid #4ABDAC;
+        border-radius: 5px;
+        margin: auto;
+        display: block;
+    }
+
+    .radio{
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
 }

@@ -19,7 +19,7 @@ class CreateMessage extends React.Component{
 
     renderWhenToSend(){
         return  <div>
-                    <div onChange={this.onWhenToSendChanged.bind(this)}>מתי לשלוח
+                    <div className="my-message-title" onChange={this.onWhenToSendChanged.bind(this)}>מתי לשלוח
                         <label className="radio">
                             <input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/> עכשיו
                         </label>
@@ -45,8 +45,9 @@ class CreateMessage extends React.Component{
     }
 
     renderWhoSends(){
-        return <div>מי שולח
-                    <input className=""
+        return <div>
+                    <div className="my-message-title">מי שולח</div>
+                    <input className="sender-input"
                            value={this.state.sender}
                            onChange={(event)=>{
                                this.setState({sender: event.target.value})
@@ -57,15 +58,14 @@ class CreateMessage extends React.Component{
 
     renderMyMessage(){
         return <div className="my-message">
-                    <div className="my-message-title">המסר שלי
-                        <textarea className="message-text"
-                                  value={this.state.message}
-                                  onChange={(event)=>{
-                                      this.setState({message: event.target.value})
-                            }}>
-                        </textarea>
-                        <div>עוד {} תווים להקלדה</div>
-                    </div>
+                    <div className="my-message-title">המסר שלי</div>
+                    <textarea className="message-text"
+                              value={this.state.message}
+                              onChange={(event)=>{
+                                  this.setState({message: event.target.value})
+                        }}>
+                    </textarea>
+                    <div className="ramaining-size">עוד {} תווים להקלדה</div>
                 </div>
     }
 
@@ -87,7 +87,7 @@ class CreateMessage extends React.Component{
                 {this.renderMyMessage()}
                 {this.renderWhoSends()}
                 {this.renderWhenToSend()}
-                <button onClick={this.onCompleteClicked.bind(this)}>סיום</button>
+                <button onClick={this.onCompleteClicked.bind(this)}>שלח</button>
 
 			</div>
 		);
