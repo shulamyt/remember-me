@@ -17,6 +17,10 @@ module.exports = {
 				use: 'babel-loader',
 				exclude: /node_modules/
 			},
+			{
+				test: /\.(png|jpg|svg)(\?.*)?$/,
+				loader: 'url-loader?limit=1638400'
+			},
 
 			{
 			test: /\.(css|scss)$/,
