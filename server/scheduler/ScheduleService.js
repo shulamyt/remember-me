@@ -9,21 +9,17 @@ const Scheduler = require('node-schedule');
 
 class SchedulerService{
 
-  constructor(scheduleType, executeFunction) {
-    //TODO - maybe to check the scheduleType format/properties
-    this.executeFunction = executeFunction;
-    var executeSchedule = Scheduler.scheduleJob(scheduleType,executeFunction);
-    this.executeSchedule = executeSchedule;
+  add(scheduleType, executeFunction) {
+    return Scheduler.scheduleJob(scheduleType,executeFunction);
   }
 
-  cancel(){
-    this.executeSchedule.cancel();
+  cancel(id){
+    Scheduler.cancel(id);
   }
 
-  changeScheduling(newSchedule){
-    this.oldExecuteFunction = this.executeFunction;
-    this.cancel();
-    return new this.constructor(newSchedule,this.oldExecuteFunction);
+  update(id, scheduleType, executeFunction){
+    this.cancel(id);
+    return this.add(scheduleType, executeFunction);
   }
 
 }

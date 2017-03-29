@@ -1,12 +1,13 @@
-const SchedulerService = require('./ScheduleService');
+const NotificationScheduler = require('./NotificationScheduler');
 
-var date = new Date(Date.now()+10000);
+var date = new Date(Date.now()+5000);
 
 var shceduler;
-scheduler = new SchedulerService(date,function(){
-  console.log("Scheduler is working!!!")
-});
+scheduler = new NotificationScheduler();
 
-scheduler.changeScheduling(Date.now()+500);
+scheduler.scheduleByDate(1,date);
+scheduler.notifyNow(2);
 
-console.log('date:'+(date.getDate())+'/'+(date.getMonth()+1)+'/'+(date.getFullYear()));
+// scheduler.changeScheduling(Date.now()+500);
+//
+// console.log('date:'+(date.getDate())+'/'+(date.getMonth()+1)+'/'+(date.getFullYear()));
