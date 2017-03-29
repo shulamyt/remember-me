@@ -22,3 +22,19 @@ StorageUtils.query(
     '"about": "אוהב לשחק עם הכלב"' +
   '}\');'
 );
+
+StorageUtils.query(
+  'insert into users (name, password, data) values (\'shula\', \'1234\', \'' +
+  '{ ' +
+    '"name" : "שולה",' +
+    '"lastName" : "ירושלמית",' +
+  '}\');'
+);
+
+StorageUtils.query(
+  'insert into users (name, password, data) values (\'moshe\', \'1234\', \'' +
+  '{ ' +
+    '"name" : "משה",' +
+    '"lastName" : "המלך",' +
+  '}\');'
+);
