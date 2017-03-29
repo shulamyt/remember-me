@@ -21,7 +21,11 @@ class NotificationService {
 
   send({clientId, title, body}) {
     var payload = {
-      notification: {title, body}
+      notification: {
+          title: title,
+          body: body,
+          sound: 'notif1'
+      }
     };
 
     // Send a message to the device corresponding to the provided
