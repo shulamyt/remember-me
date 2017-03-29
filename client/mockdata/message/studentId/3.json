@@ -1,0 +1,16 @@
+[
+	{
+		"id": "m1",
+		"text" : "MESSAGE 1"
+	},
+
+	{
+		"id": "m2",
+		"text": "MESSAGE 2"
+	},
+
+	{
+		"id": "m3",
+		"text": "MESSAGE 3"
+	}
+]
