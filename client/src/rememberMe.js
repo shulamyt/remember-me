@@ -45,7 +45,8 @@ class RememberMe extends React.Component{
 
 	renderStudentPage(){
 		return <StudentPage student={this.state.currentStudent}
-							onCompleteClicked={this.onCompleteClicked.bind(this)}/>
+							onCompleteClicked={this.onCompleteClicked.bind(this)}
+							onBackToStudentsList={this.onBackToStudentsList.bind(this)}/>
 	}
 
 	renderStudentsListPage(){
@@ -58,6 +59,10 @@ class RememberMe extends React.Component{
 		return(
 			<LoginPage onLoginSuccess={this.onLoginSuccess.bind(this)}/>
 		);
+	}
+
+	onBackToStudentsList(){
+		this.onLoginSuccess(this.state.currentUser);
 	}
 
 	render(){

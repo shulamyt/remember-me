@@ -27,7 +27,7 @@ class StudentPage extends React.Component{
                                 onCompleteClicked={this.props.onCompleteClicked}/>
 				<StudentDetails student={this.props.student}/>
 				<StudentMessages messages={this.state.messages}/>
-				<div className="back-to-list-button">לעבור לרשימת הילדים</div>
+				<div className="back-to-list-button" onClick={this.props.onBackToStudentsList}>לעבור לרשימת הילדים</div>
 			</div>
 		);
 	}
