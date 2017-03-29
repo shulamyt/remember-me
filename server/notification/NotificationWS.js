@@ -17,9 +17,11 @@ class NotificationWS {
     send(req, res, next) {
         service.send({
             clientId: req.body.clientId,
-            title: req.body.title,
-            body:  req.body.body,
-            sound: req.body.sound
+            notification: {
+                title: req.body.title,
+                body:  req.body.body,
+                sound: req.body.sound
+            }
         }).then((msg) => res.json(msg))
         .catch(next);
     }

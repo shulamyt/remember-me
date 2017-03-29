@@ -19,13 +19,9 @@ class NotificationService {
       return clientStorage.add({clientId, token})
   }
 
-  send({clientId, title, body}) {
+  send({clientId, notification}) {
     var payload = {
-      notification: {
-          title: title,
-          body: body,
-          sound: 'notif1'
-      }
+      notification: notification
     };
 
     // Send a message to the device corresponding to the provided
