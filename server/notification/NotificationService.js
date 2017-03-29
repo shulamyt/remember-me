@@ -29,7 +29,7 @@ class NotificationService {
     return new Promise((resolve, reject) => {
         clientStorage.getById(clientId).then((client) => {
             if(typeof client === 'undefined' || client === null) {
-                throw new Error('client ${clientId} not registered!');
+                reject('client ${clientId} not registered');
             }
 
             firebaseAdmin.messaging().sendToDevice(client.token, payload)
