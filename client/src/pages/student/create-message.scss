@@ -55,7 +55,7 @@
     .radio-icon-clock{
         @extend .icon;
         background: url('../../res/clock.svg') no-repeat center center;
-    }   
+    }
 }
 
 .icon{
@@ -64,7 +64,16 @@
     background-size: 70%;
     display: inline-block;
 }
-
+.button{
+    background-color: #4ABDAC;
+    border: 2px solid #4ABDAC;
+    color: #ffffff;
+    border-radius: 5px;
+    width: 188px;
+    height: 39px;
+    font-size: 16px;
+    margin-top: 10px;
+}
 .message-input{
     display: inline-block;
 }

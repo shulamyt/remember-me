@@ -25,19 +25,19 @@ class CreateMessage extends React.Component{
                     <div className="my-message-title" onChange={this.onWhenToSendChanged.bind(this)}>מתי לשלוח
                         <label className="radio">
                             <div className="radio-label">עכשיו</div>
-                            <input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/>            
-                            
+                            <input type="radio" value="now" name="timing" defaultChecked={this.state.whenToSend === "now"}/>
+
                         </label>
                         <label className="radio">
                             {this.state.whenToSend === "date" ? this.renderDateField() : null}
                             <div className="radio-label">בחר לפי תאריך ושעה</div>
-                            <input type="radio"  value="date" name="timing" defaultChecked={this.state.whenToSend === "date"}/> 
-                            
+                            <input type="radio"  value="date" name="timing" defaultChecked={this.state.whenToSend === "date"}/>
+
                         </label>
                         <label className="radio">
                             <div className="radio-label">בחר לפי תדירות</div>
                             <input type="radio" value="frequency" name="timing" defaultChecked={this.state.whenToSend === "frequency"}/>
-                            
+
                         </label>
                     </div>
                 </div>
@@ -55,7 +55,7 @@ class CreateMessage extends React.Component{
 
     renderWhoSends(){
         return <div className="who-sends">
-                    <div className="radio-icon-user"></div> 
+                    <div className="radio-icon-user"></div>
                     <div className="my-message-title">מי שולח</div>
                     <input className="sender-input"
                            value={this.state.sender}
@@ -118,7 +118,7 @@ class CreateMessage extends React.Component{
                 </div>
     }
 
-    
+
 
     render(){
         return (
@@ -127,7 +127,7 @@ class CreateMessage extends React.Component{
                 {this.renderWhoSends()}
                 {this.renderWhenToSend()}
                 {this.renderNotificationSound()}
-                <button onClick={this.onCompleteClicked.bind(this)}>שלח</button>
+                <button className="button" onClick={this.onCompleteClicked.bind(this)}>שלח</button>
 
             </div>
         );
