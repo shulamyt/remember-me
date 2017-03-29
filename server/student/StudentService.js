@@ -5,7 +5,9 @@ class StudentService {
             Storage.getByMentor(mentorId).then((fetchedStudents)=>{
                     for(var i = 0; i < fetchedStudents.length; i++){
                         let student = fetchedStudents[i];
-                        fetchedStudents[i] = Object.assign({id: student.id, mentorId: student.mentorid}, 
+                        fetchedStudents[i] = Object.assign(
+                            {id: student.id, 
+                            mentorId: student.mentorid}, 
                             JSON.parse(student.data));
                     }
                     resolve(fetchedStudents);
