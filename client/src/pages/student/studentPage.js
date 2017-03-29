@@ -26,7 +26,7 @@ class StudentPage extends React.Component{
                 <CreateMessage studentName={this.props.student.name}
                                 onCompleteClicked={this.props.onCompleteClicked}/>
 				<StudentDetails student={this.props.student}/>
-				<div className="back-to-list-button" onClick={this.props.onBackToStudentsList}>לעבור לרשימת הילדים</div>
+				<div className="back-to-list-button" onClick={this.props.onBackToStudentsList}>חזרה לרשימת הילדים</div>
 				<StudentMessages messages={this.state.messages}/>
 			</div>
 		);
@@ -38,7 +38,7 @@ class StudentPage extends React.Component{
 			console.log('get: messages by studentId = ' + self.props.student.id);
 			console.log(messages);
 			self.setState({messages});
-		});		
+		});
 	}
 }
 
