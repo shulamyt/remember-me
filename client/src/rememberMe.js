@@ -30,6 +30,10 @@ class RememberMe extends React.Component{
 		});
 	}
 
+	onCompleteClicked(message){
+		console.log(message);
+	}
+
 	onStudentClick(student){
 		this.setState({currentPage: STUDENT_PAGE, currentStudent: student})
 	}
@@ -40,7 +44,8 @@ class RememberMe extends React.Component{
 	}
 
 	renderStudentPage(){
-		return <StudentPage student={this.state.currentStudent}/>
+		return <StudentPage student={this.state.currentStudent}
+							onCompleteClicked={this.onCompleteClicked.bind(this)}/>
 	}
 
 	renderStudentsListPage(){
