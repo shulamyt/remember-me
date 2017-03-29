@@ -1,10 +1,9 @@
 {
 	"name" : "תמימה",
-	"age" : 9
+	"age" : 9,
 	"id" : "111",
 	"lastName" : "נכטשטרן",
-	"age" : 9,
-	"pic" : "http://img.mako.co.il/2010/12/07/yeekk_c.jpg",
+	"image" : "http://img.mako.co.il/2010/12/07/yeekk_c.jpg",
 	"hobbies" : "ללכת לשחק ולרוץ",
 	"about" : "אוהבת הכי בעולם את אמא שלי",
 	"gender" : "נ"

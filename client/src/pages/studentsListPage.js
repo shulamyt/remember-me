@@ -15,9 +15,9 @@ class StudentsListPage extends React.Component{
 		if(this.props.students){
 			students = this.props.students.map((student)=>{
 				return (
-					<div key={student.id} className="student" onClick={this.props.onStudentClick.bind(student)}>
+					<div key={student.id} className="student" onClick={this.props.onStudentClick.bind(this, student)}>
 						<img className="image" src={student.image}/>
-						<div className="student-details">{student.name}</div>
+						<div className="student-list-details">{student.name}</div>
 					</div>
 				);
 			});

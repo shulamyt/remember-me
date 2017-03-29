@@ -1,5 +1,6 @@
 import React from 'react';
 import StudentsListPage from './pages/studentsListPage';
+import StudentPage from './pages/student/studentPage'
 import LoginPage from './pages/loginPage';
 import * as RestService from './utilities/rest-utilities';
 
@@ -29,14 +30,6 @@ class RememberMe extends React.Component{
 		});
 	}
 
-	componentDidMount(){
-		let self = this;
-		RestService.get('/student/id/111').then(function(currentStudent) {
-			self.setState({currentStudent});
-		});
-
-	}
-
 	onStudentClick(student){
 		this.setState({currentPage: STUDENT_PAGE, currentStudent: student})
 	}
@@ -63,7 +56,19 @@ class RememberMe extends React.Component{
 	}
 
 	render(){
-		return  this.renderStudentPage();
+		switch(this.state.currentPage) {
+			case STUDENTS_LIST_PAGE:
+				return this.renderStudentsListPage();
+				break;
+			case LOGIN_PAGE:
+				return this.renderLoginPage();
+				break;
+			case STUDENT_PAGE:
+				return this.renderStudentPage();
+				break;
+			default:
+				console.log("Opps..");
+		}
 	}
 }
 
