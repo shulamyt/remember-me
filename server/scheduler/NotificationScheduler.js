@@ -1,5 +1,7 @@
 const SchedulerService = require('./ScheduleService');
-const MessageService = require('../message/MessageService');
+const MessageService = require('./../message/MessageService');
+const NotificationService = require('./../notification/NotificationService');
+
 
 class NotificationScheduler {
 
@@ -9,24 +11,24 @@ class NotificationScheduler {
     }
 
     scheduleByDate({messageId, date}){
-        let scId;
         if(date<Date.now()){
-            scId =NotificationScheduler.notifyNow();
+            this._notifyNow(messageId);
         }
         else {
-            scId = this.scheduler.add(date, this._notify.bind(this,messageId));
+            this.scheduler.add(date, this._notify.bind(this,messageId));
         }
-        this.massageMap[messageId] = scId;
-        return scId;
     }
 
-    notifyNow(messageId) {
+    _notifyNow(messageId) {
         this._notify(messageId);
     }
 
     _notify(messageId){
-        // MessageService.
-        console.log(messageId + ": Scheduler is working!!!");
+        MessageService.get(messageId).then(({message, studentId}) => {
+            console.log(messageId + ": Scheduler is working!!!");
+            let scId = NotificationService.send(studentId,message.title, message.body);
+            this.massageMap[messageId] = scId;
+        });
     }
 
 }

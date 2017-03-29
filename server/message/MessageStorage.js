@@ -7,8 +7,8 @@ class MessageStorage {
     }
 
     get(id) {
-      return StorageUtils.query('select message from where id=$1', [new Number(id)])
-                  .then((result) => (result.rows[0]));      
+      return StorageUtils.query('select * from message where id=$1', [new Number(id)])
+                  .then((result) => (result.rows[0]));
     }
 
     add({userid, message}) {

@@ -1,5 +1,4 @@
 const Storage = require('./MessageStorage');
-const NotificationScheduler = require('../scheduler/NotificationScheduler');
 class MessageService {
     getByStudent(studenId) {
         return Storage.getByUser(studenId);
@@ -7,14 +6,8 @@ class MessageService {
 
     add({userid, message}) {
         return new Promise((resolve, reject)=>{
-            Storage.add({userid, message}).then((message)=>{
-                schedule = message.schedule;
-                if(typeof schedule=="undefined" || schedule==null || schedule.date==null || typeof schedule.date=="undefined"){
-                    console.log("no schedule was found!");
-                    reject();
-                }
-                NotificationScheduler.scheduleByDate({messageId: message.messageId, date: schedule.date});
-                resolve();
+            Storage.add({userid, message}).then((messageRow)=>{
+                resolve(messageRow);
             });
         });
     }
@@ -23,8 +16,8 @@ class MessageService {
         return new Promise((resolve, reject)=>{
             Storage.get(id).then((messageRow) => {
                 resolve({
-                            message: messageRow.message,
-                            sudentId: message.userid
+                            "message": messageRow.message,
+                            "sudentId": messageRow.userid
                         });
             });
         });
