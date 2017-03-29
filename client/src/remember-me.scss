@@ -1,0 +1,9 @@
+.logo{
+    color: #4ABDAC;
+    font-family: "Trebuchet MS";
+    font-weight: bold;
+    font-size: 30px;
+    &::after {
+    	content: "Remember Me";
+    }
+}
