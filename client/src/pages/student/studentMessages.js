@@ -37,7 +37,7 @@ class StudentMessages extends React.Component{
 				return (
 					<div key={message.id} className="message">
 						<div className="message-body">{message.body}</div>
-						<div className="message-sender">{message.sender}</div>
+						<div className="message-sender">{message.title}</div>
 					</div>
 				);
 			});

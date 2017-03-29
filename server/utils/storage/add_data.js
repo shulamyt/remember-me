@@ -2,24 +2,103 @@ const StorageUtils = require('./StorageUtils');
 StorageUtils.query(
   'insert into students (mentorid, data) values (1, \'' +
   '{ ' +
-    '"name" : "עמרו",' +
-    '"lastName" : "כוהן",' +
-    '"age" : "6",' +
-    '"image": "/res/amro.jpg",' +
-    '"hobbies": "אוכל בולים",' +
-    '"about": "אוהב לשחק עם הכלב"' +
+    '"name" : "עדי",' +
+    '"lastName" : "לוי",' +
+    '"age" : "10",' +
+    '"image": "/res/adi.jpg",' +
+    '"hobbies": "ריקוד, מוסיקה,טיולים",' +
+    '"about": "ילדה חייכנית, עם שמחת חיים, מקובלת על חבריה"' +
   '}\');'
 );
 
 StorageUtils.query(
   'insert into students (mentorid, data) values (1, \'' +
   '{ ' +
-    '"name" : "דוד",' +
-    '"lastName" : "גולדברג",' +
-    '"age" : "36",' +
-    '"image": "/res/adi.jpg",' +
-    '"hobbies":  "לועס בקבוקים",' +
+    '"name" : "אמיר",' +
+    '"lastName" : "כוכבי",' +
+    '"age" : "12",' +
+    '"image": "/res/amir.jpg",' +
+    '"hobbies": "משחקי מחשב, כדורגל",' +
+    '"about": "ילד תחרותי, אוהב חופש ומרחב"' +
+  '}\');'
+);
+
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "עמרו",' +
+    '"lastName" : "כוהן",' +
+    '"age" : "6",' +
+    '"image": "/res/amro.jpg",' +
+    '"hobbies": "כדורגל, ריצה, שחמט",' +
     '"about": "אוהב לשחק עם הכלב"' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "אגם",' +
+    '"lastName" : "ספיר",' +
+    '"age" : "8",' +
+    '"image": "/res/agam.jpg",' +
+    '"hobbies": "ריקוד בלט, קריאת סיפורים",' +
+    '"about": "ילדה בישנית ומצטיינת בבית ספר "' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "עמית",' +
+    '"lastName" : "שי",' +
+    '"age" : "10",' +
+    '"image": "/res/amit.jpg",' +
+    '"hobbies": " משחקי מחשב, ציור",' +
+    '"about": "ילד מוכשר ואהוב על חבריו ומשפחתו"' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "מאיה",' +
+    '"lastName" : "גוטמן",' +
+    '"age" : "8",' +
+    '"image": "/res/maia.jpg",' +
+    '"hobbies": "ריקוד בלט, קריאת סיפורים",' +
+    '"about": "ילדה בישנית ומצטיינת בבית ספר "' +
+  '}\');'
+);
+
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "אמה",' +
+    '"lastName" : "גולדברג",' +
+    '"age" : "12",' +
+    '"image": "/res/emma.jpg",' +
+    '"hobbies": "ריקוד בלט, קריאת סיפורים",' +
+    '"about": "ילדה בישנית ומצטיינת בבית ספר "' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "نزار",' +
+    '"lastName" : "حداد",' +
+    '"age" : "12",' +
+    '"image": "/res/liron.jpg",' +
+    '"hobbies": " משחקי מחשב, ציור",' +
+    '"about": "ילד מוכשר ואהוב על חבריו ומשפחתו"' +
+  '}\');'
+);
+StorageUtils.query(
+  'insert into students (mentorid, data) values (1, \'' +
+  '{ ' +
+    '"name" : "אורנה",' +
+    '"lastName" : "יאסו",' +
+    '"age" : "9",' +
+    '"image": "/res/orna.jpg",' +
+    '"hobbies": "ריקוד בלט, קריאת סיפורים",' +
+    '"about": "ילדה בישנית ומצטיינת בבית ספר "' +
   '}\');'
 );
 
@@ -54,7 +133,8 @@ StorageUtils.query(
   '{ ' +
     '"detials" :{' +
       '"title" : "hi man",' +
-      '"body" : "whats up?"' +
+      '"body" : "whats up?",' +
+      '"sender" : "אמא ואבא"' +
     '},'+
     '"schedule": {'+
       '"date" :  "1490789857517"'+
