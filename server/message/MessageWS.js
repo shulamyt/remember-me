@@ -24,16 +24,16 @@ class MessageWS {
         service.add({
             message: req.body.message,
             userid: req.body.userid
-        }).then((messageRow) => {
-            let messageObj = JSON.parse(messageRow.message);
-            let schedule = messageObj.schedule;
-            let message = {
-                "messageId": messageRow.id,
-                "date": schedule.date
+        }).then((message) => {
+            let schedule = message.message.schedule;
+            let notification = {
+                messageId: message.id,
+                date: schedule.date
             }
-            NotificationScheduler.scheduleByDate(message);
+            NotificationScheduler.scheduleByDate(notification);
             return res.json(message);
-        });
+        })
+        .catch(next);
     }
 
     _validateMessage(message){
