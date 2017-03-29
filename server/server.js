@@ -5,13 +5,18 @@ const UserWS = require('./user/UserWS');
 const NotificationWS = require('./notification/NotificationWS');
 const MessageWS = require('./message/MessageWS');
 const StudentWS = require('./student/StudentWS');
+const path = require('path');
 
 const userWS = new UserWS();
 const messageWS = new MessageWS();
 const studentWS = new StudentWS();
 const notificationWS = new NotificationWS();
 
-app.use(express.static('../client/dist'));
+app.use(express.static('/', path.resolve(__dirname + '/../client/dist'), {
+  index: 'index.html'
+}));
+
+
 app.use(bodyParser.json());
 
 app.use(userWS.getRouter());
