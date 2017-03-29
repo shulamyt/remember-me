@@ -2,9 +2,6 @@ import React from 'react';
 import './login-page.scss';
 import * as RestService from './../utilities/rest-utilities';
 
-const USERNAME = 'username';
-const PASSWORD = 'password';
-
 class LoginPage extends React.Component{
 
 	constructor(props){
@@ -48,7 +45,7 @@ class LoginPage extends React.Component{
 						}}
 						/>
 					</div>
-					<button onClick={this.onLogin.bind(this)}>login</button>
+					<button className="enter-login" onClick={this.onLogin.bind(this)}>כניסה</button>
 				</div>
 				
 			</div>
