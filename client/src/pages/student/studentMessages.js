@@ -19,6 +19,7 @@ class StudentMessages extends React.Component{
 		    slidesToShow: 3,
 		    slidesToScroll: 1,
 		    adaptiveHeight: true,
+		    arrows: true
 
 		};
 
