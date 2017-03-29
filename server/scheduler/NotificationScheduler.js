@@ -7,7 +7,7 @@ class NotificationScheduler {
 
     constructor(){
         this.scheduler = new SchedulerService();
-        this.messagesMap = {};
+        this.massagesMap = {};
     }
 
     scheduleByDate({messageId, date}){
@@ -31,7 +31,7 @@ class NotificationScheduler {
                 title: messageObj.message.details.title,
                 body: messageObj.message.details.body
             });
-            this.massageMap[messageId] = scId;
+            this.massagesMap[messageId] = scId;
         }).catch((message)=>{throw new Error("error message handeling " + message)});
     }
 
