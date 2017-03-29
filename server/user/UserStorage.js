@@ -11,8 +11,8 @@ class UserStorage {
     }
 
     add(user) {
-        return StorageUtils.query('insert into users (name, password) values ($1, $2) returning *',
-                                    [user.name, user.password])
+        return StorageUtils.query('insert into users (name, pass) values ($1, $2) returning *',
+                                    [user.name, user.pass])
                             .then((result) => (result.rows[0]));
     }
 }

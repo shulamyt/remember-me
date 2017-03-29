@@ -7,7 +7,7 @@ class StudentWS{
   }
 
   getByMentor(req, res, next) {
-    service.getByStudent(req.query.mentorId).then((messages) => res.json(messages))
+    service.getByMentor(req.query.mentorId).then((messages) => res.json(messages))
     .catch(next);
   }
 
