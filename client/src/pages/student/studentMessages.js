@@ -14,7 +14,7 @@ class StudentMessages extends React.Component{
 		let settings = {
 			className: "messages-slider",
 		    dots: true,
-		    infinite: true,
+		    infinite: false,
 		    speed: 500,
 		    slidesToShow: 3,
 		    slidesToScroll: 1,
@@ -43,7 +43,7 @@ class StudentMessages extends React.Component{
 			});
 		}
 
-		return messages;		
+		return messages;
 	}
 }
 
