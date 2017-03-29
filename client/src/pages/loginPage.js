@@ -23,20 +23,19 @@ class LoginPage extends React.Component{
 	render(){
 		return (
 			<div className="login-page">
-				<div className="logo">Remember-Me</div>
+				<div className="logo"></div>
 				<div className="login-box">
 					<div className="login-box-title">כניסה לחשבונך</div>
-					<div className="login-username">
-						<div className="login-label">שם משתמש</div>
+					<div className="login-username">	
 						<input className="login-input"
 						value={this.state.inputUsername} 
 						onChange={(event)=>{
 							this.setState({inputUsername: event.target.value})
 						}}
 						/>
+						<div className="login-label">שם משתמש</div>
 					</div>
 					<div className="login-password">
-						<div className="login-label">סיסמה</div>
 						<input className="login-input"
 						type="password"
 						value={this.state.inputPassword} 
@@ -44,6 +43,7 @@ class LoginPage extends React.Component{
 							this.setState({inputPassword: event.target.value})
 						}}
 						/>
+						<div className="login-label">סיסמה</div>
 					</div>
 					<button className="enter-login" onClick={this.onLogin.bind(this)}>כניסה</button>
 				</div>
