@@ -12,12 +12,15 @@ class StudentMessages extends React.Component{
 		}
 
 		let settings = {
-		      dots: true,
-		      infinite: true,
-		      speed: 500,
-		      slidesToShow: 2,
-		      slidesToScroll: 1
-		    };
+			className: "messages-slider",
+		    dots: true,
+		    infinite: true,
+		    speed: 500,
+		    slidesToShow: 2,
+		    slidesToScroll: 1,
+		    adaptiveHeight: true,
+
+		};
 
 		return (
 			<Slider {...settings}>

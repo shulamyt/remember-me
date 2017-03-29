@@ -25,7 +25,10 @@ class StudentsListPage extends React.Component{
 		
 		return (
 			<div className="students-list-page">
-				<div className="logo"/>
+				<div className="logo">
+					<div className="logo-name"></div>
+					<div className="logo-icon"></div>
+				</div>
 				<div className="students-list-page-title">למי לשלוח מסר?</div>
 				{students}
 			</div>

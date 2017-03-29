@@ -26,8 +26,8 @@ class StudentPage extends React.Component{
                 <CreateMessage studentName={this.props.student.name}
                                 onCompleteClicked={this.props.onCompleteClicked}/>
 				<StudentDetails student={this.props.student}/>
-				<StudentMessages messages={this.state.messages}/>
 				<div className="back-to-list-button" onClick={this.props.onBackToStudentsList}>לעבור לרשימת הילדים</div>
+				<StudentMessages messages={this.state.messages}/>
 			</div>
 		);
 	}
