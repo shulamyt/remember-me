@@ -26,7 +26,7 @@ StorageUtils.query(
 StorageUtils.query(
   'insert into users (name, password, data) values (\'shula\', \'1234\', \'' +
   '{ ' +
-    '"name" : "שולה",' +
+    '"firstName" : "שולה",' +
     '"lastName" : "ירושלמית"' +
   '}\') returning *;'
 ).then((result) => {
@@ -39,7 +39,7 @@ StorageUtils.query(
 StorageUtils.query(
   'insert into users (name, password, data) values (\'moshe\', \'1234\', \'' +
   '{ ' +
-    '"name" : "משה",' +
+    '"firstName" : "משה",' +
     '"lastName" : "המלך"' +
   '}\') returning *;'
 ).then((result) => {
