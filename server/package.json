@@ -4,7 +4,7 @@
   "description": "Server APIs",
   "main": "server.js",
   "scripts": {
-    "start": "pm2 restart ./server.js",
+    "start": "pm2 start ./server.js",
     "stop": "pm2 stop ./server.js",
     "local": "node ./server.js",
     "dev": "node-dev ./",
