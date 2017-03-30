@@ -24,9 +24,12 @@ class StudentMessages extends React.Component{
 		};
 
 		return (
-			<Slider {...settings}>
-				{this.getMessagesBody()}
-			</Slider>
+			<div>
+ 				<h2>מסרים אחרונים</h2>
+ 				<Slider {...settings}>
+ 					{this.getMessagesBody()}
+ 				</Slider>
+ 			</div>
 		);
 	}
 
