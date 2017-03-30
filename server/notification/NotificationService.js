@@ -16,13 +16,15 @@ class NotificationService {
   }
 
   registerClient({clientId, token}) {
-      clientStorage.getById(clientId).then((client) => {
-          if(typeof client === 'undefined' || client === null) {
-              return clientStorage.add({clientId, token});
-          }else{
-              return clientStorage.update({clientId, token});
-          }
-      })
+      return new Promise(function(resolve, reject) {
+          clientStorage.getById(clientId).then((client) => {
+              if(typeof client === 'undefined' || client === null) {
+                  resolve(clientStorage.add({clientId, token}));
+              }else{
+                  resolve(clientStorage.update({clientId, token}));
+              }
+          });
+      });
 
   }
 
