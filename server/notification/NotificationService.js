@@ -16,7 +16,14 @@ class NotificationService {
   }
 
   registerClient({clientId, token}) {
-      return clientStorage.add({clientId, token})
+      clientStorage.getById(clientId).then((client) => {
+          if(typeof client === 'undefined' || client === null) {
+              return clientStorage.add({clientId, token});
+          }else{
+              return clientStorage.update({clientId, token});
+          }
+      })
+
   }
 
   send({clientId, notification}) {

@@ -15,6 +15,12 @@ class ClientStorage {
                                     [clientId, token])
                             .then((result) => (result.rows[0]));
     }
+
+    update({clientId, token}) {
+        return StorageUtils.query('update notification_clients set token = $2 where client_id = $1',
+                                    [clientId, token])
+                            .then((result) => (result.rows[0]));
+    }
 }
 
 module.exports = new ClientStorage();
