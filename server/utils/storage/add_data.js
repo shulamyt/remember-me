@@ -33,7 +33,12 @@ StorageUtils.query(
     '"hobbies": "כדורגל, ריצה, שחמט",' +
     '"about": "אוהב לשחק עם הכלב"' +
   '}\');'
-);
+).then((result) => {
+    let user = result.rows[0];
+    StorageUtils.query(
+      'insert into notification_clients (client_id, token) values ($1, \'ety2j0BgkYc:APA91bGSY2rnTBRBU7eakCVIoOYm9DVf8TOVYhj-HktbVUIxVKpm-46l26fb_4W2-SjDk0r_WA8xkRu2G03MlvEjdfXKFDJv8QXMD2XvLxMhvXf03QEfMYXjbOnpQeAvbZp5Can5GgcK\');',[user.id]
+    );
+});;
 StorageUtils.query(
   'insert into students (mentorid, data) values (1, \'' +
   '{ ' +
@@ -108,12 +113,12 @@ StorageUtils.query(
     '"firstName" : "שולה",' +
     '"lastName" : "ירושלמית"' +
   '}\') returning *;'
-).then((result) => {
+)/*.then((result) => {
     let user = result.rows[0];
     StorageUtils.query(
       'insert into notification_clients (client_id, token) values ($1, \'ceVyAuq4yk0:APA91bHGLRS3BnfGdZf1HahKEnIBrCkmxGZOajrKzbl4oSkcVOLEJkPBCa3cjHsa8vtx0Ifasg67mEZ3xNrbAP1XUuwxzvGFPm8LnNK0GDEPQjq_RCC9Osj7nGOckVo5ashG0u9wFuvX\');',[user.id]
     );
-});
+});*/
 
 StorageUtils.query(
   'insert into users (name, password, data) values (\'moshe\', \'1234\', \'' +
@@ -121,12 +126,12 @@ StorageUtils.query(
     '"firstName" : "משה",' +
     '"lastName" : "המלך"' +
   '}\') returning *;'
-).then((result) => {
+)/*.then((result) => {
     let user = result.rows[0];
     StorageUtils.query(
       'insert into notification_clients (client_id, token) values ($1, \'d_AO6BT-ZrM:APA91bHhMDgsI1zWeBCU8RdbE0JvxF-KqEwHg8_8vYROOy5zHjqjPzQ1d-hKMj4o61SJlUAOTrya0oCfbbP_rWL_pZrsaf_P3nO9Xzlh3yLsMOM577WwST6tYCBLwRnlHUmxALm4SJ-j\');',[user.id]
     );
-});
+});*/
 
 StorageUtils.query(
   'insert into messages (userid, message) values (1, \'' +
