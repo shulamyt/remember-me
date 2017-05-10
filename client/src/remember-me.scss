@@ -1,13 +1,13 @@
 .logo-name{
-    color: #4ABDAC;
-    font-family: "Trebuchet MS";
-    font-weight: bold;
+    color: #7e5293;
+    font-family: 'Pacifico', cursive;
+    // font-weight: bold;
     font-size: 30px;
     display: inline-block;
     margin-right: 10px;
     vertical-align: middle;
     &::after {
-    	content: "Remember-Me";
+    	content: "Remember me";
     }
 
 }

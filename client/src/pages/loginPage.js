@@ -11,7 +11,7 @@ class LoginPage extends React.Component{
 			inputPassword:''
 		}
 	}
-	
+
 	onLogin(){
 		let user = {
 			name: this.state.inputUsername,
@@ -24,33 +24,33 @@ class LoginPage extends React.Component{
 		return (
 			<div className="login-page">
 				<div className="logo">
-					<div className="logo-name"></div>
-					<div className="logo-icon"></div>
+					<div className="logo-icon-login"></div>
+					<div className="welcome app-text"></div>
 				</div>
-				<div className="login-box">
-					<div className="login-box-title">כניסה לחשבונך</div>
-					<div className="login-username">	
-						<input className="login-input"
-						value={this.state.inputUsername} 
-						onChange={(event)=>{
-							this.setState({inputUsername: event.target.value})
-						}}
+				<div>
+					<div className="login-username">
+						<input className="login-input login-text"
+							placeholder="שם משתשמש"
+							value={this.state.inputUsername}
+							onChange={(event)=>{
+								this.setState({inputUsername: event.target.value})
+							}}
 						/>
-						<div className="login-label">שם משתמש</div>
 					</div>
 					<div className="login-password">
-						<input className="login-input"
-						type="password"
-						value={this.state.inputPassword} 
-						onChange={(event)=>{
-							this.setState({inputPassword: event.target.value})
-						}}
+						<input className="login-input  login-text"
+							type="password"
+							placeholder="סיסמה"
+							value={this.state.inputPassword}
+							onChange={(event)=>{
+								this.setState({inputPassword: event.target.value})
+							}}
 						/>
-						<div className="login-label">סיסמה</div>
 					</div>
-					<button className="enter-login" onClick={this.onLogin.bind(this)}>כניסה</button>
+					<button className="enter-login  login-text" onClick={this.onLogin.bind(this)}>כניסה</button>
 				</div>
-				
+				<div className="logo-name-login app-text"></div>
+
 			</div>
 		);
 	}
