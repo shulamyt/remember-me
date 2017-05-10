@@ -24,7 +24,6 @@ class UserService {
                     resolve(fetchedUsers);
             });
         });
-        return Storage.get();
     }
 
     add(user) {
